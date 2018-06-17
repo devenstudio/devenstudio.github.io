@@ -17,27 +17,32 @@
 	<link rel="stylesheet" href="static/vendor/ace_admin-1.4.0/docs/assets/js/themes/sunburst.css" />
 	<style>
 		.tbl {border-collapse: collapse;}
-		.tbl td {border: solid 1px gray; padding: 2px;}
+		.tbl td {border: solid 1px gray; padding: 0px; height: 25px !important;}
 		.tbl .lbl {background-color: #C5D9F1}
-		.tbl-data tr {height: 25px;border-collapse: collapse;}
+		.tbl-data tr {height: 25px !important; border-collapse: collapse;}
 		.tbl-data thead, .tbl-data .head {background-color: lightgray; text-align: center;}
-		.w100p {width: 100%;}
-		.w50p {width: 50%;}
-		.w45p {width: 45%;}
-		.w50 {width: 50px;}
-		.w60 {width: 60px;}
-		.w75 {width: 75px;}
-		.w85 {width: 85px;}
-		.w100 {width: 100px;}
-		.w125 {width: 125px;}
-		.w150 {width: 150px;}
-		.w500 {width: 500px;}
-		.h25 {height: 25px;}
-		.h50 {height: 50px;}
-		.text-right {text-align: right}
-		.text-center {text-align: center}
+		.lblcmt {background-color: lightgray;}
+		.w100p {width: 100% !important;}
+		.h100p {height: 100% !important;}
+		.w50p {width: 50% !important;}
+		.w45p {width: 45% !important;}
+		.w25 {width: 25px !important;}
+		.w50 {width: 50px !important;}
+		.w60 {width: 60px !important;}
+		.w75 {width: 75px !important;}
+		.w85 {width: 85px !important;}
+		.w100 {width: 100px !important;}
+		.w125 {width: 125px !important;}
+		.w150 {width: 150px !important;}
+		.w500 {width: 500px !important;}
+		.h25 {height: 25px !important;}
+		.h50 {height: 50px !important;}
+		.h350 {height: 350px !important;}
+		.text-right {text-align: right !important;}
+		.text-center {text-align: center !important;}
 		.nobody {border: none !important;}
 		.innertext {border: none !important; margin: 0px !important; padding: 1px !important;}
+		.photo {width: 200px ; height: 200px; text-align: center; vertical-align: middle;font-size: 28pt; border: solid 1px gray; padding: 60px;}
 	</style>
 </head>
 
@@ -1239,10 +1244,10 @@
 							<a href="index.html">Home</a>
 						</li>
 						<li>
-							<a href="p0100.html">本部業務</a>
+							<a href="p0600.html">マスター業務</a>
 						</li>
 						<li>
-							<a href="#">本部発注</a>
+							<a href="#">商品登録</a>
 						</li>
 					</ul>
 
@@ -1316,648 +1321,157 @@
 								<li class="active">
 									<a data-toggle="tab" href="#tab1">
 										<i class="green ace-icon fa fa-home bigger-120"></i>
-										発注伝票入力
+										基本情報
 									</a>
 								</li>
 								<li>
 									<a data-toggle="tab" href="#tab2">
 										<i class="green ace-icon fa fa-calendar bigger-120"></i>
-										本部入荷入力
-									</a>
-								</li>
-								<li>
-									<a data-toggle="tab" href="#tab3">
-										<i class="green ace-icon fa fa-shield bigger-120"></i>
-										本部入荷確定
+										そのた情報
 									</a>
 								</li>
 							</ul>
 
 							<div class="tab-content">
-								<!-- 発注伝票入力 -->
+								<!-- 基本情報 -->
 								<div id="tab1" class="tab-pane fade in active">
 									<div class="row">
-										<div class="col-sm-6">
-											<table class="w100p">
-												<tr>
-													<td class="w75 text-right">伝票No．&nbsp;</td><td class="w150"><input type="text" class="w125">&nbsp;<input type="checkbox"><label>仮伝票</label></td>
-													<td class="w75 text-right">バイヤー&nbsp;</td><td class="w150"><input type="text" class="w100p"></td>
-												</tr>
-												<tr>
-													<td class="w75 text-right">仕入先No．</td><td class="w150"><input type="text" class="w100p"></td>
-													<td class="w75 text-right">発注日付&nbsp;</td><td class="w150"><input type="date" class="w100p"></td>
-												</tr>
-												<tr>
-													<td class="w75 text-right">仕入先名&nbsp;</td><td class="w150"><input type="text" class="w100p"></td>
-													<td class="w75 text-right">納品日付&nbsp;</td><td class="w150"><input type="date" class="w100p"></td>
-												</tr>
-												<tr><td class="w75 text-right">摘　要&nbsp;</td><td colspan="4"><input type="text" class="w100p"></td></tr>
-											</table>
-
-										</div>
-										<div class="col-sm-4">
-											<table class="tbl w100p">
-												<tr><td class="lbl">数量合計</td><td class="lbl">仕入金額</td><td class="lbl">消費税</td><td class="lbl">売価金額</td></tr>
-												<tr><td>200</td><td></td><td></td><td></td></tr>
-											</table>
-										</div>
-										<div class="col-sm-2">
-											<table class="tbl w100p">
-												<tr><td class="lbl">配分店舗数</td><td>48</td></tr>
-												<tr><td class="lbl">配分率計</td><td>100%</td></tr>
-												<tr><td class="lbl">本部在庫</td><td>15</td></tr>
-												<tr><td class="lbl">本部在庫</td><td>185</td></tr>
-											</table>
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-sm-12">
-											<table class="tbl-data tbl w100p">
-												<thead>
-													<tr>
-														<td rowspan="2">No</td>
-														<td colspan="3">商品コード</td>
-														<td>クラス</td>
-														<td>ユニット</td>
-														<td>ライン</td>
-														<td>部門</td>
-														<td>メーカーコード</td>
-														<td colspan="5">商品名</td>
-														<td colspan="3">コメント</td>
-														<td>カラー</td>
-														<td>サイズ</td>
-													</tr>
-													<tr>
-														<td>セット数</td>
-														<td class="text-center">×</td>
-														<td>数量</td>
-														<td colspan="2">数量</td>
-														<td colspan="2">数量計</td>
-														<td>下代</td>
-														<td>売価</td>
-														<td>メーカー上代</td>
-														<td>メーカー上代</td>
-														<td>仕入週間</td>
-														<td>値札</td>
-														<td>発売開始日</td>
-														<td>取扱終了日</td>
-														<td>纳品日</td>
-														<td>備考</td>
-														<td>納入先</td>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td rowspan="2" class="head">1</td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="5"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td class="text-center">×</td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td rowspan="2" class="head">2</td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="5"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td class="text-center">×</td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td rowspan="2" class="head">3</td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="5"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td class="text-center">×</td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td rowspan="2" class="head">4</td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="5"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td class="text-center">×</td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td rowspan="2" class="head">5</td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="5"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="3"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-													<tr>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td class="text-center">×</td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td colspan="2"><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-														<td><input type="text" name="" id="" class="innertext h20 w100p"></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-sm-2">
-											<table class="tbl w100p">
-												<tr><td class="lbl">本部在庫</td><td>15</td></tr>
-												<tr><td class="lbl">配分店舗数</td><td>48</td></tr>
-												<tr><td class="lbl">配分率計</td><td>100.0%</td></tr>
-											</table>
+										<div class="col-sm-9">
+											<div class="row">
+												<div class="col-sm-7">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl w150">商品コード</td><td><input type="text" name="" id="" class="w100p innertext"></td><td><button class="w100p h25">値札発行有</button></td></tr>
+													</table>
+												</div>
+												<div class="col-sm-5">
+													<label for="">バーコード</label>
+													<input type="text" name="" id="">
+												</div>
+											</div>
 											<br>
-											<button class="w45p h50">自動配分</button>
-											<button class="w45p h50">全クリア</button>
-											<button class="w45p h50">新店のみ</button>
-											<button class="w45p h50">ランク選択</button>
-											<button class="w45p h50">再決算</button>
+											<div class="row">
+												<div class="col-sm-7">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl w150">商品名</td><td colspan="4"><input type="text" name="" id="" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl w150">メーカー品番</td><td colspan="2" class="w100"><input type="text" name="" id="" class="w100p innertext"></td><td class="lbl">仕入週</td><td><input type="text" name="" id="" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl w150">仕入先</td><td class="w100"><input type="text" name="" id="" class="w100p innertext"></td><td colspan="3" class="lblcmt"></td></tr>
+														<tr><td class="text-right lbl w150">EOS集計先</td><td class="w100"><input type="text" name="" id="" class="w100p innertext"></td><td colspan="3" class="lblcmt"></td></tr>
+													</table>
+												</div>
+												<div class="col-sm-5">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl">登録日</td><td><input type="date" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl">更新日</td><td><input type="date" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl">販売開始日</td><td><input type="date" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl">取扱終了日</td><td><input type="date" class="w100p innertext"></td></tr>
+													</table>
+												</div>
+											</div>
+											<br>
+											<div class="row">
+												<div class="col-sm-5">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl w150">部門</td><td class="w100"><input type="datextte" class="w100p innertext"></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">ライン</td><td class="w100"><input type="datextte" class="w100p innertext"></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">クラス</td><td class="w100"><input type="datextte" class="w100p innertext"></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">ﾕﾆｯﾄ</td><td class="w100"><input type="datextte" class="w100p innertext"></td><td class="lblcmt">&nbsp;</td></tr>
+													</table>
+												</div>
+												<div class="col-sm-4">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl">下代</td><td><input type="datextte" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl">メーカー上代</td><td><input type="text" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl">売価</td><td><input type="text" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl">特価</td><td><input type="text" class="w100p innertext"></td></tr>
+													</table>
+												</div>
+												<div class="col-sm-3">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl">最終下代</td><td><input type="text" class="w100p innertext"></td></tr>
+														<tr><td class="text-right lbl">最終仕入値</td><td><input type="text" class="w100p innertext"></td></tr>
+													</table>
+												</div>
+											</div>
+											<br>
+											<div class="row">
+												<div class="col-sm-5">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl w150">サイズ</td><td class="w100"><input type="datextte" class="w100p innertext"></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">カラー</td><td class="w100"><input type="datextte" class="w100p innertext"></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">コメント</td><td class="w100"><input type="datextte" class="w100p innertext"></td><td class="lblcmt">&nbsp;</td></tr>
+													</table>
+												</div>
+												<div class="col-sm-4">
+													<table class="tbl w100p">
+														<tr><td>110cm</td><td>120cm</td><td>130cm</td><td>140cm</td><td>...</td></tr>
+														<tr><td>クロ</td><td>白</td><td></td><td></td><td></td></tr>
+														<tr><td>長袖</td><td>半袖</td><td></td><td></td><td></td></tr>
+													</table>
+												</div>
+												<div class="col-sm-3">
+													<button>編集</button>
+													<button>クリア</button>
+													<br>
+													<button>商品自動追加</button>
+												</div>
+											</div>
+											<br>
+											<div class="row">
+												<div class="col-sm-5">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl w150">商品区分</td><td class="w100"><input type="datextte" class="w100p innertext" value="0"></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">値札区分</td><td class="w100"><input type="datextte" class="w100p innertext" value="0"></td><td class="lblcmt">発行しない</td></tr>
+														<tr><td class="text-right lbl w150">在庫管理区分</td><td class="w100"><input type="datextte" class="w100p innertext" value="0"></td><td class="lblcmt">管理する</td></tr>
+													</table>
+												</div>
+												<div class="col-sm-4">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl w150">ポイント加算区分</td><td class="w50"><input type="datextte" class="w100p innertext" value="1"></td><td class="lblcmt">加算する</td></tr>
+														<tr><td class="text-right lbl w150">値札No.</td><td class="w50"><input type="datextte" class="w100p innertext" value="00"></td><td class="lblcmt">発行しない</td></tr>
+													</table>
+												</div>
+												<div class="col-sm-3">
+													<table class="tbl w100p">
+														<tr><td class="text-right lbl w150">消費税率</td><td class="w50"><input type="datextte" class="w100p innertext" value=""></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">消費税区分（仕入）</td><td class="w50"><input type="datextte" class="w100p innertext" value=""></td><td class="lblcmt">&nbsp;</td></tr>
+														<tr><td class="text-right lbl w150">消費税区分（売上）</td><td class="w50"><input type="datextte" class="w100p innertext" value=""></td><td class="lblcmt">&nbsp;</td></tr>
+													</table>
+												</div>
+											</div>
 										</div>
-										<div class="col-sm-10">
-											<table class="tbl-data tbl w100p text-center">
-												<thead>
-													<tr>
-														<td></td>
-														<td>1</td>
-														<td>2</td>
-														<td>3</td>
-														<td>4</td>
-														<td>5</td>
-														<td>6</td>
-														<td>7</td>
-														<td>8</td>
-														<td>9</td>
-														<td>10</td>
-														<td>11</td>
-														<td>12</td>
-														<td>13</td>
-														<td>14</td>
-														<td>15</td>
-														<td>16</td>
-														<td>17</td>
-														<td>18</td>
-														<td>19</td>
-														<td>20</td>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td rowspan="3" class="head">A</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-													</tr>
-													<tr>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td rowspan="3" class="head">B</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-													</tr>
-													<tr>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td rowspan="3" class="head">C</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td>新倉敷</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td>1.5%</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td>3</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td rowspan="3" class="head">D</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td rowspan="3" class="head">E</td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-												</tbody>
-											</table>
+										<div class="col-sm-3">
+											<label for="">分類選択リスト</label>
+											<input type="text" name="" id="" class="w100p h350">
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-4">
+											<label for="">登録写真：</label>
+											<button>追加</button><button>削除</button>
+											<br>
+
+											<label for="">1</label>
+											<input type="text" name="" id="">
+											<br>
+
+											<label for="">2</label>
+											<input type="text" name="" id="">
+											<br>
+
+											<label for="">3</label>
+											<input type="text" name="" id="">
+										</div>
+										<div class="col-sm-8">
+											<label for="" class="photo">写真</label>
+											<label for="" class="photo">写真</label>
+											<label for="" class="photo">写真</label>
 										</div>
 									</div>
 								</div>
 								
-								<!-- 本部入荷入力 -->
+								<!-- そのた情報 -->
 								<div id="tab2" class="tab-pane fade">
-									作成中...
-								</div>
-
-								<!-- 本部入荷確定 -->
-								<div id="tab3" class="tab-pane fade">
 									作成中...
 								</div>
 							</div>

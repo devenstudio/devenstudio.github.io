@@ -1,2 +1,2 @@
-# devenstudio.github.io
-DevenStudio
+# web_blog_devenstudio
+personal blog

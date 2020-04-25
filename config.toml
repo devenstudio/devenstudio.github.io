@@ -1,0 +1,14 @@
+baseURL = "devenstudio.github.io/"
+languageCode = "zh-CN"
+title = "Deven\nStudio"
+
+theme = "hyde"
+
+[params]
+  themeColor = "theme-base-0d"
+  description = "devenstudio"
+  main = [
+    {Name = "Github", URL = "https://github.com/devenstudio"}
+  ]
+  layoutReverse = true
+
